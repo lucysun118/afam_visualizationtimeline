@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Queer and Trans Movements Timeline - Final Project Exploring Trans Youth Mental Health through Historical Events</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis-timeline-graph2d.min.js"></script>
+    <style>
+    /* Custom CSS for tooltips */
+    .vis-tooltip {
+        font-size: 6px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Queer and Trans Movements Timeline - Final Project Exploring Trans Youth Mental Health through Historical Events</h1>
+    <h2>Created by Lucy Sun '24</h2>
+    <div id="mytimeline"></div>
+
+    <script type="text/javascript">
+        var container = document.getElementById('mytimeline');
+
+        // Create a DataSet with items
+        var items = new vis.DataSet([
+            {
+                id: 1,
+                start: new Date(2024, 1, 1),
+                content: 'Interview with Marsha P. Johnson and Randy Wicker',
+                title: '<img src="https://hips.hearstapps.com/hmg-prod/images/marsha-p-johnson-gettyimages-1392246164.jpg" style="width:100px;"><br>“This place was the “ART” that gave form to the feelings of our heartbeats. \nHere the consciousness of knowing you “belonged” nestled into that warm feeling of finally being HOME. \nAnd Home engenders love and loyalty quite naturally. So, we loved the Stonewall.”\n - Exercept from The Stonewall Reader about HOME'
+            },
+            {
+                id: 2,
+                start: new Date(2024, 1, 6),
+                content: 'The Gay Liberation Front, "Come Out for Freedom!"',
+                title: '<img src="https://www.artnews.com/wp-content/uploads/2019/06/20.-Gay-Liberation-Front-Come-Out.jpg?w=400" style="width:100px;"><br>Insights into early calls for freedom and equality.'
+            },
+            {
+                id: 3,
+                start: new Date(2024, 2, 5),
+                content: "Anita Bryant's Campaign and Florida's Laws",
+                title: '<img src="https://media-cldnry.s-nbcnews.com/image/upload/t_social_share_1024x768_scale,f_auto,q_auto:best/rockcms/2022-04/220413-anita-bryant-se-1139a-a86a2e.jpg" style="width:100px;"><br>Impact of Anita Bryant\'s anti-gay campaign\n and recent controversial laws in Florida.'
+            },
+            {
+                id: 4,
+                start: new Date(1969, 5, 28),
+                content: "Stonewall Riots",
+                title: '<img src="https://assets.editorial.aetnd.com/uploads/2017/05/stonewall-gettyimages-661695126.jpg" style="width:100px;"><br>The Stonewall Riots mark a major turning point\n in the fight for LGBTQ+ rights\n in the United States.'
+            },
+            {
+                id: 5,
+                start: new Date(1999, 10, 20),
+                content: "Transgender Day of Remembrance",
+                title: '<img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2017_46/2228951/171115-transgender-day-of-remembrance-se-1134a.jpg" style="width:100px;"><br>Annual event to honor the memory\n of those whose lives were lost\n in acts of anti-transgender violence.'
+            },
+            {
+                id: 6,
+                start: new Date(2010, 2, 23),
+                content: "Passage of the Affordable Care Act",
+                title: '<img src="https://www.americanprogress.org/wp-content/uploads/sites/2/2024/03/GettyImages-1386740410.jpgcropped.jpg?w=1680" style="width:100px;"><br>Significant for providing healthcare protections\n for transgender individuals, including mental health services.'
+            },
+            {
+                id: 7,
+                start: new Date(2016, 4, 13),
+                content: "Implementation of Title IX Protections for Transgender Students",
+                title: '<img src="https://transequality.org/sites/default/files/2024-04/Copy%20of%20Title%20IX%20General%20Rule%20Announcement.png" style="width:100px;"><br>Guidance issued by the U.S. Departments of Education and Justice\n under the Obama administration clarified\n that Title IX protects transgender students’\n rights in school settings.'
+            },
+            {
+                id: 8,
+                start: new Date(2024, 1, 15),
+                content: "Joel Hall: Growing Up Black and Gay",
+                title: '<img src="https://www.windycitytimes.com/images/publications/wct/2018-07-04/JoelHallisawardedtheLifetimeAchievementaward2014-color.jpg" style="width:100px;"><br>A personal reflection on the intersections\n of racial and sexual identity challenges.'
+            },
+            {
+                id: 9,
+                start: new Date(2024, 1, 27),
+                content: "Street Power and Claiming Public Space",
+                title: '<img src="https://i0.wp.com/www.norwoodnews.org/wp-content/uploads/2023/11/unnamed-68.jpg?ssl=1" style="width:100px;"><br>Jennifer Worley’s analysis on pre-Stonewall\n queer radicalism in San Francisco highlights\n the role of public demonstrations in claiming rights\n and space for LGBTQ+ individuals.'
+            },
+            {
+                id: 10,
+                start: new Date(2022, 2, 22),
+                content: "Florida’s ‘Don’t Say Gay’ Law",
+                title: '<img src="https://media.them.us/photos/621011b3a42c497a371d6f13/16:9/w_2560%2Cc_limit/AP_22047042410281.jpg" style="width:100px;"><br>This controversial law restricts discussions of\n sexual orientation and gender identity\n in schools, impacting the visibility\n and mental health support for LGBTQ+ youth.'
+            },
+            {
+                id: 11,
+                start: new Date(2022, 2, 28),
+                content: "Florida’s ‘Anti-Woke’ Law",
+                title: '<img src="https://cloudfront-us-east-1.images.arcpublishing.com/tbt/QZM6X6VOJNASVCVZQYQYKGFNLM.jpg" style="width:100px;"><br>Part of a series of legislation aimed at limiting\n the teaching of certain views on race\n and sexuality, further affecting educational environments\n for marginalized students.'
+            },
+            {
+                id: 12,
+                start: new Date(2022, 4, 10),
+                content: "Mental Health Awareness Campaigns by LGBTQ+ Organizations",
+                title: '<img src="data:image/png;base64,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" style="width:100px;"><br>In response to restrictive educational laws, numerous LGBTQ+ organizations have initiated mental health awareness campaigns to support trans youth across the nation.'
+            },
+            {
+                id: 13,
+                start: new Date(2023, 5, 15),
+                content: "Legal Challenges and Court Decisions on Educational Laws",
+                title: '<img src="https://epe.brightspotcdn.com/e5/d5/5a285b37491482269287141122db/063023-scotus-303-creative-lgbtq-ap-bs.jpg" style="width:100px;"><br>Court decisions in 2023 have played a critical\n role in challenging the legality of laws\n such as Floridas "Dont Say Gay",\n affecting public perception\n and the legal landscape for trans youth.'
+            }
+        ]);
+
+        var options = {
+            orientation: 'top',
+            showCurrentTime: true,
+            stack: true,
+            verticalScroll: true,
+            zoomKey: 'ctrlKey',
+        };
+
+        var timeline = new vis.Timeline(container, items, options);
+    </script>
+</body>
+</html>
